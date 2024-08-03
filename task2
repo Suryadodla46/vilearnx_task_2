@@ -1,0 +1,47 @@
+def get_student_grades():
+prompts the user to input grades for different subjects.
+returns a dictionary with subjects as keys and grades as values
+grades={}
+while True:
+subject= input(Enter the subject name(or type'done' to finish):)
+if subject.lower()=='done':
+break
+try:
+grade= float(input(f"Enter the grade for{subject}:"))
+grades[subject]= grade
+except ValueError:
+print("Invalid grade.Please enter a numerical value.")
+return grades
+def calculate_average(grades):
+claculate the average grade from  the dictonary of grades.
+if not grades:
+return0
+return sum(grades.values()/len(grades)
+def determine_letter_grade(average):
+Determines the letter grade based on the average grade.
+if average>=9:
+return'A'
+elif average>=8:
+return'B'
+elif average>=7:
+return'C'
+elif average>=6:
+return'D'
+else:
+return'F'
+def display_results(grades):
+Display the overall grade information including the average and letter grade.
+average=claculate_average(grades)
+letter_grade=
+determine_letter_grade(average)
+print ("/nGrade Report:")
+for subject,grade in grades.items():
+print(f"{suject}:{grade:.2f}"):
+print(f"/nAverage Grade:{average:.2f}")
+print(f"Letter Grade:{Letter_grade}")
+def main():
+print("Welcome to the student Grade Tracker")
+grades=get_student_grade()
+display_results(grades)
+if_name_=="_main_":
+main()
